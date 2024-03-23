@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize the colorAccent to change the default highlight color -->
+        <item name="colorAccent">@color/custom_highlight_color</item>
+        <item name="colorPrimaryDark">@color/custom_notification_bar_color</item>
+    </style>
+
+
+
+</resources>

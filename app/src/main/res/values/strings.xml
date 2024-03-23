@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">Assignment_01</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="enter_the_password">Password</string>
+    <string name="enter_first_name">First Name</string>
+    <string name="enter_last_name">Last Name</string>
+    <string name="exit_here">Exit</string>
+    <string name="enter_email">Email ID</string>
+    <string name="login_here">Login now</string>
+    <string name="enter_the_username">Enter Username</string>
+    <string name="register">Register</string>
+    <string name="sign_up">SIGN UP</string>
+    <string name="login">Login</string>
+    <string name="re_enter_the_password">Retype Password</string>
+    <string name="chatify">Chatify</string>
+    <string name="male">Male</string>
+    <string name="female">Female</string>
+    <string name="already_have_an_account">Already have an account?</string>
+    <string name="login_now">Login Now</string>
+    <string name="app_icon_definition">App Icon</string>
+    <string name="no_account_yet">No Account yet?</string>
+    <string name="create_one">Create One</string>
+    <string name="sign_out">Sign Out</string>
+    <string name="screen_title">GUI Demo 21l-1844</string>
+    <string name="two">Two</string>
+    <string name="one">One</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

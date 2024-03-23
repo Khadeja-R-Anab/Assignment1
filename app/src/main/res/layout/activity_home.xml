@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Home">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#162A51"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="30dp"
+            android:layout_gravity="center_vertical">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnSignOut"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:backgroundTint="#162A51"
+                android:gravity="center_vertical"
+                android:text=""
+                android:textColor="#D5CECE"
+                app:icon="@drawable/baseline_arrow_back_24_light"
+                app:iconGravity="start"
+                app:iconSize="24dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/screen_title"
+                android:textColor="#D5CECE"
+                android:textSize="17sp"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnPageOne"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:padding="16dp"
+                android:gravity="center_vertical"
+                android:text="@string/one"
+                app:icon="@drawable/favorite_24px"
+                app:iconGravity="start"
+                app:iconSize="24dp"
+                android:backgroundTint="#162A51"
+                android:textColor="#D5CECE"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnPageTwo"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:padding="16dp"
+                android:gravity="center_vertical"
+                android:text="@string/two"
+                app:icon="@drawable/baseline_call_24"
+                app:iconGravity="start"
+                app:iconSize="24dp"
+                android:backgroundTint="#162A51"
+                android:textColor="#D5CECE"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+<!--    <LinearLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+<!--        android:orientation="horizontal">-->
+<!--        <androidx.fragment.app.FragmentContainerView-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:name="com.example.assignment1.PageOneFrag"-->
+<!--            tools:layout="@layout/fragment_page_one"-->
+<!--            android:id="@+id/fragPageOne"-->
+<!--            />-->
+<!--        <androidx.fragment.app.FragmentContainerView-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:name="com.example.assignment1.PageTwoFrag"-->
+<!--            tools:layout="@layout/fragment_page_two"-->
+<!--            android:id="@+id/fragPageTwo"-->
+<!--            />-->
+<!--    </LinearLayout>-->
+
+</LinearLayout>
