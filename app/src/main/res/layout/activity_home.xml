@@ -77,24 +77,24 @@
 
     </LinearLayout>
 
-<!--    <LinearLayout-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="match_parent"-->
-<!--        android:orientation="horizontal">-->
-<!--        <androidx.fragment.app.FragmentContainerView-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="match_parent"-->
-<!--            android:name="com.example.assignment1.PageOneFrag"-->
-<!--            tools:layout="@layout/fragment_page_one"-->
-<!--            android:id="@+id/fragPageOne"-->
-<!--            />-->
-<!--        <androidx.fragment.app.FragmentContainerView-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="match_parent"-->
-<!--            android:name="com.example.assignment1.PageTwoFrag"-->
-<!--            tools:layout="@layout/fragment_page_two"-->
-<!--            android:id="@+id/fragPageTwo"-->
-<!--            />-->
-<!--    </LinearLayout>-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+        <fragment
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:name="com.example.assignment1.PageOneFrag"
+            tools:layout="@layout/fragment_page_one"
+            android:id="@+id/fragPageOne"
+            />
+        <fragment
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:name="com.example.assignment1.PageTwoFrag"
+            tools:layout="@layout/fragment_page_two"
+            android:id="@+id/fragPageTwo"
+            />
+    </LinearLayout>
 
 </LinearLayout>
