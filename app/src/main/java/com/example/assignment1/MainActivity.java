@@ -48,75 +48,31 @@ public class MainActivity extends AppCompatActivity {
         }
 
 
-        btnSignup.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                manager.beginTransaction()
-                        .hide(LoginFragment)
-                        .show(SignUpFragment)
-                        .commit();
-            }
-        });
+        btnSignup.setOnClickListener(view -> manager.beginTransaction()
+                .hide(LoginFragment)
+                .show(SignUpFragment)
+                .commit());
 
-        btnRLogin.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                manager.beginTransaction()
-                        .show(LoginFragment)
-                        .hide(SignUpFragment)
-                        .commit();
-            }
-        });
+        btnRLogin.setOnClickListener(view -> manager.beginTransaction()
+                .show(LoginFragment)
+                .hide(SignUpFragment)
+                .commit());
 
-        btnRSignup.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                String FName = etRFirstName.getText().toString();
-                String LName = etRLastName.getText().toString();
-                String Pass = etRPassword.getText().toString();
-                String ConfirmPass = etRConfirmPassword.getText().toString();
-                String REmail = etREmail.getText().toString();
-                if (!(FName.isEmpty()) && !(LName.isEmpty()) && !(Pass.isEmpty()) && !(ConfirmPass.isEmpty()) && !(REmail.isEmpty()) && (rBtnFemale.isChecked() || rBtnMale.isChecked())) {
-                    if(Objects.requireNonNull(Pass.equals(ConfirmPass)))
-                    {
-                        editor.putString("email", Objects.requireNonNull(etREmail.getText()).toString());
-                        editor.putString("password", Objects.requireNonNull(etRPassword.getText()).toString());
-                        editor.apply();
-
-                        Toast.makeText(MainActivity.this, "User Created", Toast.LENGTH_SHORT).show();
-
-                        editor1.putBoolean("isLogin", true);
-                        editor1.apply();
-
-                        Intent intent = new Intent(MainActivity.this, Home.class);
-                        startActivity(intent);
-                        finish();
-                    }
-                    else {
-                        Toast.makeText(MainActivity.this, "Passwords do not match", Toast.LENGTH_SHORT).show();
-                    }
-                }
-                else {
-                    Toast.makeText(MainActivity.this, "Fill all fields", Toast.LENGTH_SHORT).show();
-                }
-            }
-        });
-
-        btnRExit.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finish();
-            }
-        });
-
-        btnLogin.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                String email = sPref.getString("email", null);
-                String password = sPref.getString("password", null);
-                if(Objects.requireNonNull(etEmail.getText()).toString().equals(email)
-                            && Objects.requireNonNull(etPassword.getText()).toString().equals(password))
+        btnRSignup.setOnClickListener(view -> {
+            String FName = Objects.requireNonNull(etRFirstName.getText()).toString();
+            String LName = Objects.requireNonNull(etRLastName.getText()).toString();
+            String Pass = Objects.requireNonNull(etRPassword.getText()).toString();
+            String ConfirmPass = Objects.requireNonNull(etRConfirmPassword.getText()).toString();
+            String REmail = Objects.requireNonNull(etREmail.getText()).toString();
+            if (!(FName.isEmpty()) && !(LName.isEmpty()) && !(Pass.isEmpty()) && !(ConfirmPass.isEmpty()) && !(REmail.isEmpty()) && (rBtnFemale.isChecked() || rBtnMale.isChecked())) {
+                if(Pass.equals(ConfirmPass))
                 {
+                    editor.putString("email", Objects.requireNonNull(etREmail.getText()).toString());
+                    editor.putString("password", Objects.requireNonNull(etRPassword.getText()).toString());
+                    editor.apply();
+
+                    Toast.makeText(MainActivity.this, "User Created", Toast.LENGTH_SHORT).show();
+
                     editor1.putBoolean("isLogin", true);
                     editor1.apply();
 
@@ -124,12 +80,35 @@ public class MainActivity extends AppCompatActivity {
                     startActivity(intent);
                     finish();
                 }
-                else
-                {
-                    Toast.makeText(MainActivity.this, "Incorrect Username or Password", Toast.LENGTH_SHORT).show();
+                else {
+                    Toast.makeText(MainActivity.this, "Passwords do not match", Toast.LENGTH_SHORT).show();
                 }
-
             }
+            else {
+                Toast.makeText(MainActivity.this, "Fill all fields", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        btnRExit.setOnClickListener(v -> finish());
+
+        btnLogin.setOnClickListener(view -> {
+            String email = sPref.getString("email", null);
+            String password = sPref.getString("password", null);
+            if(Objects.requireNonNull(etEmail.getText()).toString().equals(email)
+                        && Objects.requireNonNull(etPassword.getText()).toString().equals(password))
+            {
+                editor1.putBoolean("isLogin", true);
+                editor1.apply();
+
+                Intent intent = new Intent(MainActivity.this, Home.class);
+                startActivity(intent);
+                finish();
+            }
+            else
+            {
+                Toast.makeText(MainActivity.this, "Incorrect Username or Password", Toast.LENGTH_SHORT).show();
+            }
+
         });
 
     }

@@ -29,41 +29,28 @@ public class Home extends AppCompatActivity {
 
         SharedPreferences sPref = getSharedPreferences("Login", MODE_PRIVATE);
         SharedPreferences.Editor editor1 = sPref.edit();
-        boolean flag = sPref.getBoolean("isLogin", true);
+        sPref.getBoolean("isLogin", true);
 
-        btnPageTwo.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                manager.beginTransaction()
-                        .hide(PageOneFrag)
-                        .show(PageTwoFrag)
-                        .commit();
-            }
-        });
+        btnPageTwo.setOnClickListener(view -> manager.beginTransaction()
+                .hide(PageOneFrag)
+                .show(PageTwoFrag)
+                .commit());
 
-        btnPageOne.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                manager.beginTransaction()
-                        .hide(PageTwoFrag)
-                        .show(PageOneFrag)
-                        .commit();
-            }
-        });
+        btnPageOne.setOnClickListener(view -> manager.beginTransaction()
+                .hide(PageTwoFrag)
+                .show(PageOneFrag)
+                .commit());
 
-        btnSignOut.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                editor1.putBoolean("isLogin", false);
-                editor1.apply();
+        btnSignOut.setOnClickListener(view -> {
+            editor1.putBoolean("isLogin", false);
+            editor1.apply();
 
-                Toast.makeText(Home.this, "Signing Out", Toast.LENGTH_SHORT).show();
+            Toast.makeText(Home.this, "Signing Out", Toast.LENGTH_SHORT).show();
 
-                Intent intent = new Intent(Home.this,
-                        MainActivity.class);
-                startActivity(intent);
-                finish();
-            }
+            Intent intent = new Intent(Home.this,
+                    MainActivity.class);
+            startActivity(intent);
+            finish();
         });
     }
     private void init()
