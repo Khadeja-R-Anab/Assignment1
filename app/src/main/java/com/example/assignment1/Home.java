@@ -16,10 +16,7 @@ import java.util.Objects;
 
 public class Home extends AppCompatActivity {
 
-    FragmentManager manager;
     Button btnSignOut, btnPageOne, btnPageTwo;
-    View pageOneView, pageTwoView;
-    Fragment PageOneFrag, PageTwoFrag;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,15 +28,11 @@ public class Home extends AppCompatActivity {
         SharedPreferences.Editor editor1 = sPref.edit();
         sPref.getBoolean("isLogin", true);
 
-        btnPageTwo.setOnClickListener(view -> manager.beginTransaction()
-                .hide(PageOneFrag)
-                .show(PageTwoFrag)
-                .commit());
-
-        btnPageOne.setOnClickListener(view -> manager.beginTransaction()
-                .hide(PageTwoFrag)
-                .show(PageOneFrag)
-                .commit());
+        btnPageTwo.setOnClickListener(view ->{
+            Intent intent = new Intent(Home.this,
+                    Instagram.class);
+            startActivity(intent);
+        });
 
         btnSignOut.setOnClickListener(view -> {
             editor1.putBoolean("isLogin", false);
@@ -55,15 +48,8 @@ public class Home extends AppCompatActivity {
     }
     private void init()
     {
-        manager = getSupportFragmentManager();
         btnSignOut = findViewById(R.id.btnSignOut);
         btnPageOne = findViewById(R.id.btnPageOne);
         btnPageTwo = findViewById(R.id.btnPageTwo);
-
-        pageOneView = Objects.requireNonNull(manager.findFragmentById(R.id.fragPageOne)).requireView();
-        pageTwoView = Objects.requireNonNull(manager.findFragmentById(R.id.fragPageTwo)).requireView();
-
-        PageOneFrag = manager.findFragmentById(R.id.fragPageOne);
-        PageTwoFrag = manager.findFragmentById(R.id.fragPageTwo);
     }
 }

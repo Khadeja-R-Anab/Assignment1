@@ -72,28 +72,22 @@
                 android:backgroundTint="#162A51"
                 android:textColor="#D5CECE"/>
 
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnPageThree"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:padding="16dp"
+                android:gravity="center_vertical"
+                android:text="@string/three"
+                app:icon="@drawable/favorite_24px"
+                app:iconGravity="start"
+                app:iconSize="24dp"
+                android:backgroundTint="#162A51"
+                android:textColor="#D5CECE"/>
+
         </LinearLayout>
 
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="horizontal">
-        <fragment
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:name="com.example.assignment1.PageOneFrag"
-            tools:layout="@layout/fragment_page_one"
-            android:id="@+id/fragPageOne"
-            />
-        <fragment
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:name="com.example.assignment1.PageTwoFrag"
-            tools:layout="@layout/fragment_page_two"
-            android:id="@+id/fragPageTwo"
-            />
     </LinearLayout>
 
 </LinearLayout>
